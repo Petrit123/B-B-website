@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang='cs'>
+  <head>
+    <title>Location</title>
+    <meta charset='utf-8'>
+    <meta name='description' content=''>
+    <meta name='keywords' content=''>
+    <meta name='author' content=''>
+    <meta name='robots' content='all'>
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <link rel="stylesheet" type="text/css" href="home.css">
+     <link href="favicon.ico" rel="icon"> 
+<link href="favicon.ico" rel="shortcut icon">
+      <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script>
+	
+	navigator.geolocation.getCurrentPosition(success);
+	function success(position){
+	var mylat = position.coords.latitude;
+	var mylong = position.coords.longitude;
+	
+	
+	//use the google maps api specified above to create the map out of our coords
+	//need to specify 3 things for our map, 
+	//our coords, a marker, define the map itself
+	
+	//Google-API-ready latitude and longitude string
+	var coords  = new google.maps.LatLng(mylat, mylong);
+	
+	// Options for google map to work
+	//how zoomed in it is, where the center is and then the type of map i.e. road or sat
+	var mapOptions  = {
+	
+	zoom:16,
+	center:coords,
+	mapTypeId: google.maps.MapTypeId.ROADMAP
+	
+	}
+	//creating the map 
+	//specify where do we put the map on the page and the map options
+	var map = new google.maps.Map(document.getElementById("map1"), mapOptions);
+	
+	//no marker yet on the map so we create a marker and specify the map we want to use and the coords of the marker
+	var marker = new google.maps.Marker({map:map, position:coords})
+	}
+	
+
+	</script>
+    
+  </head>
+  <body>
+  
+  <div id="Wrapper">
+  
+  
+  
+  <div id="Header">
+  
+  <div id="menu">
+    <div class="menu-container">
+      <a href="#menu" class="menu-button">Menu</a>
+      <div class="menu">
+        <a href="home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Rooms.html">Rooms</a>
+        <a href="Location.html">Location</a>
+        <a href="Contact.html" class="active">Contact Us</a>  
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
+       
+  
+      <h1 class = "homeheading" style= "Arial, Helvetica, sans-serif;">Bed & Breakfast</h1> <br><hr class="hrhome">
+    
+      <img class ="SmIcons1" src="facebook-256.png" alt="Breakfast" style="width:5%;height:10%;">
+      <img class ="SmIcons2" src="tripadvisor.png" alt="Breakfast" style="width:5%;height:10%;">
+      <img class ="SmIcons3" src="697029-twitter-512.png" alt="Breakfast" style="width:5%;height:10%;">
+
+      <p class="locationpara" style= "Arial, Helvetica, sans-serif;">Things to do in Kerry </p> <hr id="hrlocation">
+      
+ 
+      
+      <div id="locationimgs">
+      
+      <img class ="kerry" src="dome.jpg" alt="Breakfast" style="width:45%;height:10%;">
+      <p class = "locationtxt">Tralee Aquadome is one of Ireland's largest and most modern indoor 
+      water leisure facilities incorporating a free form leisure pool, waves, 
+      rapids, water slide and sauna suite. An outdoor adventure play area with 
+      crazy golf and model boats has recently been added.</p>
+      
+      <img class ="kerry2" src="1343296167.jpg" alt="Breakfast" style="width:45%;height:10%;">
+      <p class = "locationtxt2">Kerry the Kingdom Museum at the Ashe Memorial 
+      Hall is the ideal starting point for tours of County Kerry. It consists 
+      of 3 superb attractions which tell the story of Kerry and Ireland over 
+      8,000 years.</p>
+      
+      <img class ="kerry3" src="siamsa-tire-theatre-tralee.jpg" alt="Breakfast" style="width:45%;height:10%;">
+      <p class = "locationtxt3">Siamsa Tire, The National Folk Theatre of 
+      Ireland, Theatre and Arts Centre operates as both a producing and 
+      receiving house throughout the year. From May to September the National 
+      Folk Theatre produces a Summer Repertory Season providing visitors to 
+      Tralee with nightly performances.</p>
+      
+      </div>
+      
+      <div id = "map1" style = "width:500px;height:700px;left:50%;top:-700px;">
+</div>
+      
+    
+      
+      
+      
+      <div id ="Footer4">
+
+
+</div>
+
+</div>
+
+
+  </body>
+</html>
